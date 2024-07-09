@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #portfolio-table, #chart-container {
+            margin-top: 20px;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Portfolio</h1>
+    <form id="stock-form">
+        <label for="symbol">Stock Symbol:</label>
+        <input type="text" id="symbol" name="symbol" required>
+        <label for="shares">Number of Shares:</label>
+        <input type="number" id="shares" name="shares" required>
+        <label for="purchase-price">Purchase Price:</label>
+        <input type="number" id="purchase-price" name="purchase-price" step="0.01" required>
+        <button type="submit">Add to Portfolio</button>
+    </form>
+    <div id="portfolio-table">
+        <h2>My Portfolio</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Stock</th>
+                    <th>Shares</th>
+                    <th>Purchase Price</th>
+                    <th>Current Price</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody id="portfolio-body">
+                <!-- Portfolio data will go here -->
+            </tbody>
+        </table>
+    </div>
+    <div id="chart-container">
+        <canvas id="portfolio-chart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
